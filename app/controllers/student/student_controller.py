@@ -1,3 +1,4 @@
+# importing libraries
 from flask import Blueprint, request,jsonify
 from app.status_codes import HTTP_200_OK, HTTP_400_BAD_REQUEST,HTTP_403_FORBIDDEN, HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_ERROR
 from app.models.student.student_model import Student
@@ -6,9 +7,10 @@ from app.extensions import db
 from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity,create_refresh_token
 
 
-
+# naming student blueprint
 students = Blueprint('students', __name__, url_prefix='/api/v1/students')
 
+# Register srudent
 @students.route('/register', methods = ['POST'])
 def register_student():
     
@@ -20,6 +22,7 @@ def register_student():
     date_of_birth = data.get(date_of_birth)
     
 
+    # validations
     try:
         if not student_name or not email or not contact or not date_of_birth:
             return jsonify({
@@ -106,8 +109,8 @@ def get_all_students():
         }), HTTP_500_INTERNAL_SERVER_ERROR
         
 
-# deleting a student by id
 
+# deleting a student by id
 @students.route('/delete/<int:id>', methods=['DELETE'])
 def delete_student(id):
     
