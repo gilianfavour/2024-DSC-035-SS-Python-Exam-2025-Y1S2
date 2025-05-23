@@ -4,7 +4,7 @@ from app.status_codes import HTTP_200_OK, HTTP_400_BAD_REQUEST,HTTP_403_FORBIDDE
 from app.models.student.student_model import Student
 import validators
 from app.extensions import db
-from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity,create_refresh_token
+from flask_jwt_extended import get_jwt_identity
 
 
 # naming student blueprint

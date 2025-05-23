@@ -2,7 +2,7 @@ from flask import Blueprint, request,jsonify
 from app.status_codes import HTTP_200_OK, HTTP_400_BAD_REQUEST, HTTP_409_CONFLICT, HTTP_500_INTERNAL_SERVER_ERROR, HTTP_404_NOT_FOUND
 from app.models.program.program_model import Program
 from app.extensions import db
-from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity,create_refresh_token
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 programs = Blueprint('programs', __name__, url_prefix='/api/v1/programs')
 
