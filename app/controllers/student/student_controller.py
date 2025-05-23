@@ -16,10 +16,10 @@ def register_student():
     
     data = request.json
     
-    student_name = data.get(student_name)
-    email = data.get(email)
-    contact = data.get(contact)
-    date_of_birth = data.get(date_of_birth)
+    student_name = data.get('student_name')
+    email = data.get('email')
+    contact = data.get('contact')
+    date_of_birth = data.get('date_of_birth')
     
 
     # validations

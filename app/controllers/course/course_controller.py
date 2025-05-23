@@ -11,8 +11,8 @@ def register_course():
     
     data = request.json
     
-    course_code = data.get(course_code)
-    description = data.get(description)
+    course_code = data.get('course_code')
+    description = data.get('description')
     
 
     try:

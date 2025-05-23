@@ -11,8 +11,8 @@ def register_program():
     
     data = request.json
     
-    type = data.get(type)
-    duration = data.get(duration)
+    type = data.get('type')
+    duration = data.get('duration')
     
 
     try:
