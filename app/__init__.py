@@ -1,5 +1,9 @@
+# importing the libraries
 from flask import Flask
 from app.extensions import db,migrate
+from app.controllers.student.student_controller import students
+from app.controllers.course.course_controller import courses
+from app.controllers.program.program_controller import programs
 
 
 #application factory function
@@ -12,7 +16,19 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app,db)
 
-
+    
+    # importing and registering models
+    from app.models.program.program_model import Program
+    from app.models.course.course_model import Course
+    from app.models.student.student_model import Student
+    
+    
+    # registering blue prints
+    app.register_blueprint(students)
+    app.register_blueprint(courses)
+    app.register_blueprint(programs)
+    
+    
     @app.route("/")
     def exam_page():
      return """
