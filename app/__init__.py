@@ -19,8 +19,8 @@ def create_app():
     
     # importing and registering models
     from app.models.program.program_model import Program
-    # from app.models.course.course_model import Course
-    # from app.models.student.student_model import Student
+    from app.models.course.course_model import Course
+    from app.models.student.student_model import Student
     
     
     # registering blue prints
